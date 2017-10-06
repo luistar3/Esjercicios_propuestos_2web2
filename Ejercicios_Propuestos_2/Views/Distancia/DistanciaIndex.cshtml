@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "DistanciaIndex";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Distancia </h2>
+
+
+@using (Html.BeginForm("DistanciaCalcular", "Distancia", FormMethod.Post))
+{
+
+    <input class="form-control" name="dist" type="number" placeholder="Ingrese Distancia en Metros" required />
+    <br />
+    <input class="form-inline" name="hora" type="number" placeholder="Ingrese Hora" required />
+    <input class="form-inline" name="minuto" type="number" placeholder="Ingrese Minuto" required  min="1" max="60"/>
+    <input class="form-inline" name="segundo" type="number" placeholder="Ingrese Segundo" required  min="1" max="60"/>
+    <br /><br />
+
+        <input class="btn btn-primary" type="submit" value="Calcular">
+}
+
+
+

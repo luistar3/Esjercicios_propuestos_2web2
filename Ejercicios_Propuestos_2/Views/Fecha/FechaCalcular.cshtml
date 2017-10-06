@@ -1,0 +1,65 @@
+﻿@model Ejercicios_Propuestos_2.Models.Clsfecha
+@{
+    ViewBag.Title = "FechaCalcular";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Calculos de Anios</h2>
+
+@{ 
+    int ini = Model.ini;
+    int fin = Model.fin;
+
+    
+
+
+    if (Model.tipo == "bi")
+    {
+        <h2>Bisiestos</h2>
+
+        for (int a = Convert.ToInt32(ini); a <= Convert.ToInt32(fin); a++)
+        {
+            if (a % 4 == 0 && (a % 100 != 0 || a % 400 == 0))
+            {
+                <span class="label label-primary">@a</span>
+            }
+
+        }
+
+    }
+    else if (Model.tipo == "no")
+
+    {
+        <h2>No Bisiestos</h2>
+
+        for (int a = Convert.ToInt32(ini); a <= Convert.ToInt32(fin); a++)
+        {
+            if (a % 4 == 0 && (a % 100 != 0 || a % 400 == 0))
+            {
+
+            }
+            else
+            {
+                <span class="label label-danger">@a</span>
+            }
+
+        }
+    }
+    else
+    {
+        <h2><span class="label label-primary">Bisiesto</span> y <span class="label label-danger">No Bisiesto</span></h2>
+        for (int a = Convert.ToInt32(ini); a <= Convert.ToInt32(fin); a++)
+        {
+            if (a % 4 == 0 && (a % 100 != 0 || a % 400 == 0))
+            {
+                <span class="label label-primary">@a</span>
+            }
+            else
+            {
+                <span class="label label-danger">@a</span>
+            }
+
+        }
+    }
+
+}

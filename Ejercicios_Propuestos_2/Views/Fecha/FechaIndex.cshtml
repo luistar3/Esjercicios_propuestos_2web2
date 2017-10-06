@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "FechaIndex";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Fecha </h2>
+
+@using (Html.BeginForm("FechaCalcular", "Fecha", FormMethod.Post))
+{
+
+    <input class="form-control" name="ini" type="number" placeholder="Ingrese Anio Inicial" required />
+    <br />
+    <input class="form-control" name="fin" type="number" placeholder="Ingrese Anio Final" required />
+
+    <br />
+    <label>Ver Anios</label>
+    <br />
+        <input type="radio" name="tipo" value="bi" checked> <label>Bisiestos</label>
+        <input type="radio" name="tipo" value="no">        <label>No Bisiestos</label>
+        <input type="radio" name="tipo" value="am">        <label>Ambos</label>
+
+        <br />
+        <br />
+        <br />
+        <input class="btn btn-primary" type="submit" value="Calcular">
+ }

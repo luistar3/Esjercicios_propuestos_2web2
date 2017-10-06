@@ -1,0 +1,29 @@
+﻿@model Ejercicios_Propuestos_2.Models.ClsMoneda
+@{
+    ViewBag.Title = "MonedaCalcular";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Resultado del Cambio</h2>
+@{
+    string a;
+    if (Model.tipo=="dolar")
+    {
+        a = "dolar.png";
+    }
+    else if (Model.tipo == "yen")
+    {
+        a = "yen.png";
+    }
+    else if (Model.tipo == "euro")
+    {
+        a = "euro.png";
+    }
+    else
+    {
+        a = "peso.png";
+    }
+
+    <h1>S/ @Model.soles  ---- a @Model.cambio ---->  @Model.cambio</h1>    <img src="~/assets/img/@a" />
+}
+    

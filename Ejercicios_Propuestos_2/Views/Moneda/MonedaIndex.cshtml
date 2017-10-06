@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "MonedaIndex";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Cambio Moneda</h2>
+
+@using (Html.BeginForm("MonedaCalcular", "Moneda", FormMethod.Post)) {
+
+<input class ="form-control" name ="soles" type="number" placeholder="Ingrese Cantidad en Soles" required />
+<br />
+<label for="comment">Moneda de Cambio:</label>
+<select  class="selectpicker" name="tipo">
+    
+    <option value="dolar" >DOLAR</option> 
+    <option value="yen">YEN</option>
+    <option value="euro">EURO</option>
+    <option value="peso">PESO</option>
+    
+</select>
+<br />
+<br />
+    <br />
+    <input class="btn btn-primary" type="submit" value="Calcular">
+}

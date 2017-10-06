@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "ImagenIndex";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Imagen Aleatoria</h2>
+
+@{
+    Random r = new Random();
+
+    var arr1 = new[] { "1.png", "2.png", "3.png" };
+    string a = Convert.ToString(arr1[r.Next(arr1.Length)]);
+
+    string b = Convert.ToString(arr1[r.Next(arr1.Length)]);
+
+    string c = Convert.ToString(arr1[r.Next(arr1.Length)]);
+
+    if (a == b && b == c && a == c)
+    {
+        <h3>Ganaste 10000 soles</h3>
+    }
+
+    else if(a == b || b == c)
+    {
+        <h3 class="alert">Casi estas Cerca de Ganar</h3>
+    }
+    else
+    {
+        <h3>Sigue Intentandolo</h3>
+    }
+
+    <img src="~/assets/img/@a" />
+    <img src="~/assets/img/@b" />
+    <img src="~/assets/img/@c" />
+
+
+}
+
+
+
+
